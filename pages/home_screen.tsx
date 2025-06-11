@@ -1,7 +1,6 @@
-
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Global } from '@emotion/react';
 import { globalStyles, styles } from '@/styles/home_screen';
 import Link from 'next/link';
@@ -17,24 +16,20 @@ const SearchIcon = () => (
 );
 
 const PlusIcon = () => (
-    // Aplica o estilo diretamente e adiciona um className para o seletor de hover no pai
     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" css={styles.plusIcon} className="plus-icon"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" /></svg>
 );
 
 
-// --- TIPOS DE DADOS ---
 
 interface Recommendation {
   id: number;
   type: 'video' | 'image';
   source: string;
-  poster?: string; // Capa estática para os vídeos
+  poster?: string; 
   title: string;
   description: string;
 }
 
-// --- DADOS DAS MÚSICAS ---
-// Lembre-se de substituir os caminhos para seus vídeos e imagens na pasta 'assets'
 const recommendationsData: Recommendation[] = [
   { id: 1, type: 'video', source: './assets/video1.mp4', poster: './assets/arcane_cover.jpg', title: 'Ma Meilleure Ennemie ft. Coldplay', description: 'Single • Stromae, Pomme, Coldplay e Uyenna' },
   { id: 2, type: 'video', source: './assets/video2.mp4', poster: './assets/ado_cover.jpg', title: "Ado's Best Adobum", description: 'Álbum • Ado' },
@@ -110,25 +105,40 @@ const RecommendationCard = ({ item }: { item: Recommendation }) => {
     );
 };
 
-const MainContent = () => (
-  <main css={styles.mainContent}>
-    <header css={styles.mainHeader}>
+const MainContent = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredRecommendations = recommendationsData.filter((item) =>
+    item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    item.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  return (
+    <main css={styles.mainContent}>
+      <header css={styles.mainHeader}>
         <div css={styles.searchBarWrapper}>
-             <SearchIcon />
-             <input type="text" placeholder="Pesquisar" css={styles.searchInput} />
+          <SearchIcon />
+          <input
+            type="text"
+            placeholder="Pesquisar"
+            css={styles.searchInput}
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
         </div>
         <div css={styles.profileIcon}></div>
-    </header>
-    <section>
-      <h2 css={styles.sectionTitle}>RECOMENDADO PARA VOCÊ</h2>
-      <div css={styles.cardGrid}>
-        {recommendationsData.map((item) => (
-          <RecommendationCard key={item.id} item={item} />
-        ))}
-      </div>
-    </section>
-  </main>
-);
+      </header>
+      <section>
+        <h2 css={styles.sectionTitle}>RECOMENDADO PARA VOCÊ</h2>
+        <div css={styles.cardGrid}>
+          {filteredRecommendations.map((item) => (
+            <RecommendationCard key={item.id} item={item} />
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+};
 
 const HomeScreen = () => (
   <div css={styles.musicPlayerContainer}>
