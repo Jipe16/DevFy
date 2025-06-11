@@ -7,9 +7,11 @@ import Container from "@mui/material/Container";
 import TextField from "@mui/material/TextField";
 import { useRouter } from "next/router";
 import Header from "@/app/components/header/header";
+import Image from "next/image";
 import { ThemeProvider } from "styled-components";
 import theme from "@/theme";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+import CustomButton from "@/app/components/button/button";
 
 export default function Home() {
   const [email, setEmail] = React.useState("");
@@ -45,6 +47,7 @@ export default function Home() {
             <TextField
               variant="outlined"
               type="email"
+              label="E-mail ou nome de usuário"
               value={email}
               color="secondary"
               onChange={(e) => setEmail(e.target.value)}
@@ -55,6 +58,7 @@ export default function Home() {
               Senha
             </Typography>
             <TextField
+              label="Senha"
               variant="outlined"
               color="secondary"
               type="password"
@@ -66,6 +70,47 @@ export default function Home() {
             <Button type="submit" variant="contained" color="primary" fullWidth>
               Continuar
             </Button>
+            <hr style={{ width: "100%", borderColor: "white" }} />
+            <CustomButton
+              text={"Continuar com o Google"}
+              imageSrc={"/google-icon.svg"}
+            />
+            <CustomButton
+              text={"Continuar com o Facebook"}
+              imageSrc={"/facebook-icon.svg"}
+            />
+            <CustomButton
+              text={"Continuar com a Apple"}
+              imageSrc={"/apple-icon.svg"}
+            />
+            <CustomButton
+              text={"Continuar com o número de telefone"}
+              imageSrc={"/phone-icon.svg"}
+            />
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "start",
+                gap: 1,
+              }}
+            >
+              <Typography color="secondary" variant="body2">
+                Não tem conta?
+              </Typography>
+              <Typography
+                color="secondary"
+                variant="body2"
+                sx={{
+                  cursor: "pointer",
+                  textDecoration: "underline",
+                  fontWeight: "bold",
+                }}
+                onClick={() => (window.location.pathname = "signup")}
+              >
+                Inscrever-se.
+              </Typography>
+            </Box>
           </Box>
         </Container>
       </AppRouterCacheProvider>
