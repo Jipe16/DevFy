@@ -1,8 +1,8 @@
-import css from 'styled-jsx/css';
+import css from "styled-jsx/css";
 
 export default css.global`
   body {
-    background-color: #E6EDF5;
+    background: black;
     margin: 0;
     padding: 0;
     font-size: 18px;
