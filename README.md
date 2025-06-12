@@ -28,7 +28,7 @@ DevFy é um clone conceitual do Spotify desenvolvido como parte de um projeto ac
 
 | Protótipo | Interface |
 |----------|-----------|
-| ![Figma](./public/assets/figma_preview.jpg) | ![Site Pronto](./assets/site_preview.jpeg) |
+| ![Figma](./public/assets/figma_preview.jpg) | ![Site Pronto](./public/assets/site_preview.jpg) |
 
 > As imagens acima representam o design original (à esquerda) e o resultado final implementado (à direita).
 
