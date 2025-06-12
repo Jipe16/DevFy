@@ -36,9 +36,7 @@ DevFy é um clone conceitual do Spotify desenvolvido como parte de um projeto ac
 
 ## 👤 Autor
 
-- **Filipe Azevedo da Rocha Cortez**  
-  - Curso: Ciência da Computação – UNIMA.AFYA  
-  - GitHub: [@Jipe16](https://github.com/Jipe16)
+  - Filipe Azevedo da Rocha Cortez  
   - Luís Eduardo Marinho Cavalcante Luz
   - Gabriel Cardoso Carvalho
   - Hugo Augusto Araújo Silva
