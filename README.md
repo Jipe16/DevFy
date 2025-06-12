@@ -1,3 +1,57 @@
+# 🎧 DevFy
+
+DevFy é um clone conceitual do Spotify desenvolvido como parte de um projeto acadêmico. O objetivo é replicar uma experiência moderna de streaming musical, com uma interface amigável, responsiva e funcional, utilizando tecnologias do ecossistema React/Next.js.
+
+---
+
+## 🧩 Funcionalidades
+
+- Página inicial com recomendações interativas
+- Reprodução de música com barra de progresso, tempo e volume
+- Sistema de navegação entre páginas (`Home`, `Search`, `Playing`)
+- Layout consistente com base no design feito no Figma
+
+---
+
+## 🚀 Tecnologias utilizadas
+
+- **Next.js** – Framework React para SSR/SSG e roteamento.
+- **React.js** – Biblioteca para construção de UI com componentes.
+- **TypeScript** – Tipagem estática para maior segurança no desenvolvimento.
+- **Emotion** – Biblioteca CSS-in-JS para estilização modular.
+- **HTML5 `<audio>`** – Player de áudio com controle manual via React.
+- **Git + GitHub** – Versionamento e colaboração com uso de Fork e Pull Request.
+
+---
+
+## 🎨 Protótipo no Figma
+
+| Protótipo | Interface |
+|----------|-----------|
+| ![Figma](./assets/figma_preview.png) | ![Site Pronto](./assets/site_preview.png) |
+
+> As imagens acima representam o design original (à esquerda) e o resultado final implementado (à direita).
+
+---
+
+## 👤 Autor
+
+- **Filipe Azevedo da Rocha Cortez**  
+  - Curso: Ciência da Computação – UNIMA.AFYA  
+  - GitHub: [@Jipe16](https://github.com/Jipe16)
+  - Luís Eduardo Marinho Cavalcante Luz
+  - Gabriel Cardoso Carvalho
+  - Hugo Augusto Araújo Silva
+
+---
+
+## 📁 Organização
+
+Este projeto foi baseado no repositório original de [@Heitorallmeida](https://github.com/Heitorallmeida/DevFy), com alterações para fins acadêmicos e aprimoramentos pessoais.
+
+---
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
